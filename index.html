@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Denken Agents — AI Agents Built To Be Accountable</title>
+<meta name="description" content="Denken Agents builds AI agents for your business: custom built around your work, governed by policy and budget, and managed by us day to day. From Denken Labs, Frankfurt — the people who run Carolverse.">
+<meta property="og:title" content="Denken Agents — AI Agents Built To Be Accountable">
+<meta property="og:description" content="Custom built around your work. Governed by policy and budget. Managed day to day. Every action carries one name and a record behind it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://denkenagents.com/">
+<meta property="og:image" content="https://denkenagents.com/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d0f14'/><text x='16' y='23' font-size='19' font-family='Georgia,serif' fill='%23c9a227' text-anchor='middle'>D</text></svg>">
+<style>
+:root{--bg:#0d0f14;--panel:#141822;--ink:#e8e6df;--muted:#9a978c;--gold:#c9a227;--line:#242a38}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 Georgia,"Times New Roman",serif}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+a{color:var(--gold)}
+
+header{padding:15px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,15,20,.95);backdrop-filter:blur(6px);z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{color:var(--gold);font-weight:700;letter-spacing:4px;font-size:16px;text-decoration:none}
+nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:13px}
+nav a:hover{color:var(--gold)}
+nav a.btn{border:1px solid var(--gold);color:var(--gold);padding:7px 15px;font-size:13px}
+nav a.btn:hover{background:var(--gold);color:var(--bg)}
+
+.hero{padding:88px 0 56px;text-align:center}
+.eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+h1{font-size:clamp(34px,5.2vw,58px);line-height:1.12;letter-spacing:-0.5px;font-weight:700}
+h1 em{color:var(--gold);font-style:normal;display:block}
+.hero p.lead{max-width:760px;margin:26px auto 0;color:var(--muted)}
+.hero p.lead b{color:var(--ink);font-weight:700}
+.cta{margin-top:36px}
+.cta a{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:12px 28px;margin:0 8px 10px;text-decoration:none;letter-spacing:1px;font-size:14px}
+.cta a:hover{background:var(--gold);color:var(--bg)}
+.cta a.solid{background:var(--gold);color:var(--bg);font-weight:700}
+.cta a.solid:hover{background:var(--ink);border-color:var(--ink)}
+
+.heroimg{margin:44px auto 0;max-width:680px}
+.heroimg img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;box-shadow:0 18px 60px rgba(201,162,39,0.10);background:#0a0c11}
+.herobrand{margin-top:38px;text-align:center;color:var(--gold);font-weight:700;font-size:clamp(30px,6.4vw,76px);letter-spacing:0.2em;text-indent:0.2em;line-height:1.1}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:26px;margin-bottom:8px}
+.sublead{color:var(--muted);max-width:820px;margin-bottom:28px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);padding:24px}
+.card h3{font-size:17px;color:var(--gold);margin-bottom:8px;letter-spacing:.5px}
+.card p{color:var(--muted);font-size:15px}
+.card.pillar .g{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:step}
+.step{background:var(--panel);border:1px solid var(--line);padding:22px 18px;position:relative}
+.step::before{counter-increment:step;content:counter(step);display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font-size:14px;margin-bottom:12px}
+.step h3{font-size:16px;color:var(--gold);margin-bottom:6px;letter-spacing:.5px}
+.step p{color:var(--muted);font-size:14px}
+
+.frame{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);padding:24px 28px;max-width:860px;margin-bottom:34px}
+.frame p{color:var(--muted)}
+.frame b{color:var(--ink)}
+
+.chips{margin-top:34px}
+.chips h3{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.chips h3 b{color:var(--gold)}
+.chiprow{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--panel);color:var(--muted);font-size:13px;padding:6px 12px;border-radius:2px}
+.chip:hover{border-color:var(--gold);color:var(--ink)}
+
+.testband{margin-top:40px;border:1px solid var(--gold);padding:26px 30px;text-align:center}
+.testband .k{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.testband p{font-size:20px;margin-top:8px}
+.testband p em{color:var(--gold);font-style:normal}
+
+.prose{max-width:820px}
+.prose p{color:var(--muted);margin-bottom:16px}
+.prose p b{color:var(--ink)}
+.prose a.more{text-decoration:none;border-bottom:1px solid var(--gold)}
+
+.closing{margin-top:20px;background:var(--panel);border:1px solid var(--line);padding:32px;display:grid;grid-template-columns:2fr 1fr;gap:30px}
+.closing h3{font-size:21px;margin-bottom:10px}
+.closing p{color:var(--muted);font-size:15px}
+.closing .links{display:flex;flex-direction:column;gap:9px}
+.closing .links a{font-size:14px;text-decoration:none}
+.closing .links a:hover{text-decoration:underline}
+
+.contact{border:1px solid var(--gold);padding:40px;text-align:center;margin-top:56px}
+.contact h2{margin-bottom:10px}
+.contact p{color:var(--muted);max-width:620px;margin:0 auto 26px}
+.contact .addr{font-size:13px;color:var(--muted);margin-top:18px;letter-spacing:1px}
+
+footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 44px;text-align:center;color:var(--muted);font-size:12px;letter-spacing:1.5px}
+footer a{text-decoration:none}
+
+@media(max-width:1000px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+  .hero{padding:56px 0 40px}
+  .steps{grid-template-columns:1fr}
+  .closing{grid-template-columns:1fr}
+  .contact{padding:30px 22px}
+}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="brand" href="#top">DENKEN AGENTS</a>
+  <nav>
+    <a href="#build">What we build</a>
+    <a href="#how">How we work</a>
+    <a href="#governance">Governance</a>
+    <a href="https://carolverse-os.denken-labs.com/" target="_blank" rel="noopener">Carolverse</a>
+    <a class="btn" href="#talk">Talk to us</a>
+  </nav>
+</div></header>
+
+<main class="wrap" id="top">
+
+<div class="hero">
+  <p class="eyebrow">An agent factory · Denken Labs, Frankfurt</p>
+  <h1>AI agents built for your business<em>governed, managed, accountable</em></h1>
+  <p class="lead">We build AI agents around the work your team actually does — not a template and not
+  a chatbot. Each one is <b>custom built</b> to a specification you sign off, <b>governed</b> by a
+  written mandate and a spending limit that refuses before it spends, and <b>managed</b> by us day
+  to day. Every action it takes carries one name and a record behind it.</p>
+  <div class="cta">
+    <a class="solid" href="#talk">Talk to us</a>
+    <a href="#how">See how we build</a>
+    <a href="https://carolverse-os.denken-labs.com/" target="_blank" rel="noopener">Meet the estate we run</a>
+  </div>
+
+  <div class="heroimg">
+    <img src="hero.jpg" width="1024" height="1024"
+         alt="A vast dark assembly hall lit by a golden arch, with a row of suited figures standing at even intervals along the floor, each more fully lit than the last.">
+  </div></header>
+
+<main class="wrap" id="top">
+
+<div class="hero">
+  <p class="eyebrow">An agent factory · Denken Labs, Frankfurt</p>
+  <h1>AI agents built for your business<em>governed, managed, accountable</em></h1>
+  <p class="lead">We build AI agents around the work your team actually does — not a template and not
+  a chatbot. Each one is <b>custom built</b> to a specification you sign off, <b>governed</b> by a
+  written mandate and a spending limit that refuses before it spends, and <b>managed</b> by us day
+  to day. Every action it takes carries one name and a record behind it.</p>
+  <div class="cta">
+    <a class="solid" href="#talk">Talk to us</a>
+    <a href="#how">See how we build</a>
+    <a href="https://carolverse-os.denken-labs.com/" target="_blank" rel="noopener">Meet the estate we run</a>
+  </div>
+
+  <div class="heroimg">
+    <svg viewBox="0 0 680 400" role="img" aria-label="A stylised foundry hall: an assembly line beneath a vaulted roof, each finished agent leaving under its own name">
+      <defs>
+        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c9a227" stop-opacity=".30"/>
+          <stop offset="100%" stop-color="#c9a227" stop-opacity=".04"/>
+        </linearGradient>
+        <radialGradient id="forge" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#c9a227" stop-opacity=".55"/>
+          <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="680" height="400" fill="#0a0c11"/>
+      <g stroke="#242a38" stroke-width="1">
+        <path d="M0 40h680M0 80h680M0 120h680M0 160h680M0 200h680M0 240h680M0 280h680M0 320h680M0 360h680"/>
+        <path d="M40 0v400M120 0v400M200 0v400M280 0v400M360 0v400M440 0v400M520 0v400M600 0v400"/>
+      </g>
+      <!-- vaulted roof -->
+      <g fill="none" stroke="#c9a227" stroke-opacity=".55" stroke-width="1.4">
+        <path d="M60 210 Q340 20 620 210"/>
+        <path d="M110 210 Q340 70 570 210"/>
+        <path d="M160 210 Q340 118 520 210"/>
+        <path d="M210 210 Q340 160 470 210"/>
+      </g>
+      <g stroke="#c9a227" stroke-opacity=".28" stroke-width="1">
+        <path d="M340 44v166M245 74v136M435 74v136M170 118v92M510 118v92"/>
+      </g>
+      <!-- roof columns -->
+      <g fill="url(#fade)" stroke="#c9a227" stroke-opacity=".45" stroke-width="1">
+        <rect x="52" y="210" width="16" height="118"/>
+        <rect x="612" y="210" width="16" height="118"/>
+      </g>
+      <!-- the forge -->
+      <circle cx="340" cy="212" r="76" fill="url(#forge)"/>
+      <g fill="none" stroke="#c9a227" stroke-width="1.6" stroke-opacity=".9">
+        <path d="M304 246v-34a36 36 0 0 1 72 0v34z"/>
+        <path d="M296 246h88"/>
+      </g>
+      <g stroke="#c9a227" stroke-opacity=".5" stroke-width="1">
+        <path d="M322 232v-14M340 236v-22M358 232v-14"/>
+      </g>
+      <!-- assembly line -->
+      <line x1="40" y1="300" x2="640" y2="300" stroke="#c9a227" stroke-opacity=".7" stroke-width="1.6"/>
+      <g stroke="#c9a227" stroke-opacity=".25" stroke-width="1">
+        <path d="M70 300v16M130 300v16M190 300v16M250 300v16M310 300v16M370 300v16M430 300v16M490 300v16M550 300v16M610 300v16"/>
+      </g>
+      <!-- agents leaving the line, each more complete than the last -->
+      <g fill="none" stroke="#c9a227" stroke-width="1.5">
+        <g stroke-opacity=".30"><circle cx="150" cy="284" r="7"/></g>
+        <g stroke-opacity=".45"><circle cx="230" cy="284" r="7"/><path d="M230 291v9"/></g>
+        <g stroke-opacity=".62"><circle cx="310" cy="284" r="7"/><path d="M310 291v9M301 296h18"/></g>
+        <g stroke-opacity=".80"><circle cx="410" cy="284" r="7"/><path d="M410 291v9M401 296h18"/><rect x="400" y="268" width="20" height="7" stroke-opacity=".5"/></g>
+        <g stroke-opacity="1"><circle cx="500" cy="284" r="7"/><path d="M500 291v9M491 296h18"/><rect x="490" y="268" width="20" height="7" stroke-opacity=".7"/><path d="M486 300h28" stroke-opacity=".7"/></g>
+      </g>
+      <!-- name plates: each finished agent leaves under a name -->
+      <g fill="#c9a227" fill-opacity=".55" font-family="Georgia,serif" font-size="9" text-anchor="middle">
+        <text x="150" y="332">unnamed</text>
+        <text x="230" y="332">role</text>
+        <text x="310" y="332">mandate</text>
+        <text x="410" y="332">budget</text>
+        <text x="500" y="332">named</text>
+      </g>
+      <line x1="40" y1="352" x2="640" y2="352" stroke="#242a38"/>
+      <g fill="#9a978c" font-family="Georgia,serif" font-size="10" letter-spacing="2">
+        <text x="40" y="372">THE FACTORY FLOOR</text>
+        <text x="640" y="372" text-anchor="end">NOTHING LEAVES WITHOUT A NAME</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="herobrand">DENKEN AGENTS</div>
+</div>
+
+<section id="build">
+  <h2>What we build for you</h2>
+  <p class="sublead">Most agent projects deliver a clever demo that nobody ends up owning. We deliver
+  three things together, because any one of them alone is what makes the other two fail.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Agents built around your work</h3>
+      <p>We start from how your business actually runs — who decides what, where the judgement sits,
+      what repeats every week. The agents map onto roles you already recognise, and each is built to
+      written requirements and accepted on criteria you can check yourself.</p>
+    </div>
+    <div class="card">
+      <h3>The governance layer, built in</h3>
+      <p>Identity, mandate, spending limit and audit trail go in <em>with</em> the agent, never bolted
+      on afterwards. Every action traces to exactly one name, every permission is revocable by you,
+      and every euro is attributed before it is spent.</p>
+    </div>
+    <div class="card">
+      <h3>Day-to-day operation</h3>
+      <p>We run them. Agents wake on schedule, are monitored for silence as well as for errors,
+      escalate what they cannot decide, and are repaired, re-budgeted and improved as your business
+      changes — with a named human who answers when something goes wrong.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How we work</h2>
+  <p class="sublead">You approve the roster before anything is built. Most agent projects fail at the
+  first step rather than the last: somebody automates a task nobody had described.</p>
+  <div class="steps">
+    <div class="step"><h3>Understand the work</h3>
+      <p>We map what your team does all day — the repetition, the judgement calls, the handovers and
+      the places where things quietly go wrong.</p></div>
+    <div class="step"><h3>Design the roster</h3>
+      <p>We propose the agents by role, each with duties, limits and a reporting line. You approve
+      that roster — and what each one may never do — before a line is written.</p></div>
+    <div class="step"><h3>Build to spec</h3>
+      <p>Each agent is built against written requirements, tested, and accepted on criteria agreed
+      with you. Unproven work is not finished work.</p></div>
+    <div class="step"><h3>Govern from day one</h3>
+      <p>Identity, policy, spending limits and the record go in with the agent, not after it is
+      already running in your business.</p></div>
+    <div class="step"><h3>Operate and improve</h3>
+      <p>Monitoring, cost control, escalation handling and upgrades — with a monthly account of what
+      the agents did and what they cost.</p></div>
+  </div>
+</section>
+
+<section id="governance">
+  <h2>Governed, managed, custom built</h2>
+  <p class="sublead">Three words that are easy to claim. Here is what each one has to mean before we
+  will put an agent into your business.</p>
+
+  <div class="frame">
+    <p><b>The claim behind the three words:</b> an agent that is merely capable is a liability. What
+    makes it safe to run is boring and unglamorous — a name, a mandate, a limit, a record and a
+    person at the end of it. No single one of those produces accountability; they only work
+    together, and removing one weakens the rest.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card pillar"><div class="g">Custom built</div>
+      <h3>Built around your work, not a template</h3>
+      <p>The roster comes out of your processes. An agent nobody in your business recognises the job
+      of is an agent nobody will trust with it.</p></div>
+    <div class="card pillar"><div class="g">Traceability</div>
+      <h3>Every action carries one name</h3>
+      <p>Named agents on their own accounts — never a shared login. "Who did this?" always has
+      exactly one answer, enforced by the system rather than by convention.</p></div>
+    <div class="card pillar"><div class="g">Governed money</div>
+      <h3>Budgets that refuse before they spend</h3>
+      <p>Every agent carries a limit checked <em>before</em> the work, not reported after it.
+      Ungoverned spend is worse than undeclared spend.</p></div>
+    <div class="card pillar"><div class="g">Managed</div>
+      <h3>Silence is treated as a fault</h3>
+      <p>An agent that stopped working looks identical to one with nothing to do. We monitor for
+      both, so quiet failure does not sit undiscovered for a month.</p></div>
+    <div class="card pillar"><div class="g">Evidence</div>
+      <h3>Claims check against records</h3>
+      <p>A check that could not run is not a pass. We would rather tell you something is unproven
+      than show you a green tick that means nothing.</p></div>
+    <div class="card pillar"><div class="g">Human mapping</div>
+      <h3>Every agent ends at a person</h3>
+      <p>Each agent maps to someone in your organisation who carries the accountability for it.
+      Escalation has one ruled route, and the last rung is always a human.</p></div>
+  </div>
+
+  <div class="chips">
+    <h3>What goes in with every agent — <b>a sample</b></h3>
+    <div class="chiprow">
+      <span class="chip">its own login</span>
+      <span class="chip">a named human owner</span>
+      <span class="chip">a written mandate</span>
+      <span class="chip">a daily spending limit</span>
+      <span class="chip">acceptance criteria you sign</span>
+      <span class="chip">permissions you can revoke</span>
+      <span class="chip">an escalation route</span>
+      <span class="chip">review before delivery</span>
+      <span class="chip">a monitored heartbeat</span>
+      <span class="chip">an audit log of every action</span>
+      <span class="chip">no shared credentials</span>
+      <span class="chip">cost attributed per task</span>
+      <span class="chip">your own data, your own accounts</span>
+      <span class="chip">a monthly account</span>
+      <span class="chip">a documented off switch</span>
+    </div>
+  </div>
+
+  <div class="testband">
+    <div class="k">The test</div>
+    <p>Ask what it did, why it did it, and what it cost — and get <em>one</em> answer.</p>
+    <p style="font-size:16px;color:var(--muted);margin-top:6px">If nobody can answer that, it is not ready to run in your business.</p>
+  </div>
+</section>
+
+<section id="who">
+  <h2>Who it is for</h2>
+  <p class="sublead">Three conversations we have most often.</p>
+  <div class="grid">
+    <div class="card"><h3>We drown in the same work every week</h3>
+      <p>Repetitive judgement work a person still has to touch — intake, triage, chasing,
+      reconciling, reporting. If the work is describable, it is buildable.</p></div>
+    <div class="card"><h3>We can't deploy what we can't explain</h3>
+      <p>Regulated or client-facing work where a black box is not an option. Here governance and
+      audit are the product, not the paperwork around it.</p></div>
+    <div class="card"><h3>We tried a chatbot and nobody owned it</h3>
+      <p>A pilot that answered questions, drifted, and quietly became nobody's job. We start by
+      deciding who is accountable and build backwards from there.</p></div>
+    <div class="card"><h3>We want our own agent team, not a licence</h3>
+      <p>The agents run on subscriptions you own, against your data, under rules you can change.
+      You are not renting access to somebody else's black box.</p></div>
+  </div>
+</section>
+
+<section id="proof">
+  <h2>We do not just build them — we run one</h2>
+  <div class="prose">
+    <p><b>Carolverse is our own estate:</b> dozens of named AI agents with roles, records, budgets and
+    a constitution, building, governing, auditing and narrating their own work every day, answerable
+    to one human. It is where every rule on this page was learned — including the ones that were
+    learned the hard way.</p>
+    <p>It runs in public. You can read the encyclopedia of it, follow the daily work log, and see
+    what it cost, before you ever talk to us about yours. We would rather you judged us on a system
+    you can inspect than on a case study you cannot.</p>
+    <p><a class="more" href="https://carolverse-os.denken-labs.com/" target="_blank" rel="noopener">Walk through Carolverse →</a></p>
+  </div>
+
+  <div class="closing">
+    <div>
+      <h3>The ground it stands on</h3>
+      <p>Denken Agents builds on Oratorium — the platform agent-run businesses stand on. Six levels
+      of governance, a build pipeline, a money layer and the machinery that wakes agents day on
+      day, so what we hand you is a working organisation rather than a prototype.</p>
+    </div>
+    <div class="links">
+      <a href="https://oratorium.denken-labs.com/" target="_blank" rel="noopener">Oratorium, the platform →</a>
+      <a href="https://carolverse-os.denken-labs.com/" target="_blank" rel="noopener">Carolverse, the first estate →</a>
+      <a href="https://carolopedia.denken-labs.com/" target="_blank" rel="noopener">The encyclopedia →</a>
+      <a href="https://blog.denken-labs.com/" target="_blank" rel="noopener">The logbook →</a>
+    </div>
+  </div>
+</section>
+
+<div class="contact" id="talk">
+  <h2>Tell us what your team does all day.</h2>
+  <p>That is genuinely the whole first conversation. If there is an agent worth building we will
+  describe it, what it would be allowed to do, and roughly what it would cost to run — and if there
+  isn't one, we will tell you that too.</p>
+  <div class="cta"><a class="solid" href="mailto:ninad@denken-labs.com?subject=Denken%20Agents%20%E2%80%94%20enquiry">Email us</a></div>
+  <p class="addr">Denken Labs · Frankfurt am Main, Germany</p>
+</div>
+
+</main>
+
+<footer>
+  DENKEN AGENTS · INTELLIGENCE YOU CAN HOLD ACCOUNTABLE ·
+  <a href="https://denken-labs.com/" target="_blank" rel="noopener">DENKEN LABS</a>
+</footer>
+
+</body>
+</html>
